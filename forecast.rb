@@ -33,7 +33,36 @@ class Forecast
         end
     end
 
+    def self.morning_report(latitude=40.7127, longitude=-74.0059)
+        sec_in_day = 86400
+        yesterday = ForecastIO.forecast(latitude, longitude, time: (Time.now - sec_in_day).to_i)
+        today = ForecastIO.forecast(latitude, longitude, time: Time.now.to_i)
+
+        temp_diff = (yesterday.currently.temperature - today.currently.temperature).abs
+
+        yesterdays_weather = yesterday.currently.icon
+        todays_weather = today.currently.icon
+
+        if !(inclement?(yesterdays_weather) == inclement?(todays_weather)) || temp_diff > 10
+            # msg = weather_msg(Time.now, today.currently.summary, today.currently.temperature, today.minutely, today.alerts)
+            msg = <<~MSG
+                Forecast for #{Time.now.strftime('%l:%M %P on %A %B %-d, %Y')}:
+                #{today.currently.summary.downcase} with a temperature of #{today.currently.temperature}° F
+
+                Soon:
+                #{today.minutely.summary}
+            MSG
+            client = Slack::Web::Client.new
+            client.chat_postMessage(link_names: "ifua-interview-room", channel: '#ifua-interview-room', text: "@channel: #{msg}", as_user: true)
+        end
+    end
+
     private
+
+    def self.inclement?(weather)
+        ["hail", "rain", "sleet", "snow", "thunderstorm", "tornado", "wind", "fog"].include? weather
+    end
+
 
     def weather_msg(time, summary, temperature, imminent_weather, alerts)
         <<~MSG
