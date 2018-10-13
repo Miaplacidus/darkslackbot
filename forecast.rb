@@ -44,7 +44,6 @@ class Forecast
         todays_weather = today.currently.icon
 
         if !(inclement?(yesterdays_weather) == inclement?(todays_weather)) || temp_diff > 10
-            # msg = weather_msg(Time.now, today.currently.summary, today.currently.temperature, today.minutely, today.alerts)
             msg = <<~MSG
                 Forecast for #{Time.now.strftime('%l:%M %P on %A %B %-d, %Y')}:
                 #{today.currently.summary.downcase} with a temperature of #{today.currently.temperature}° F
