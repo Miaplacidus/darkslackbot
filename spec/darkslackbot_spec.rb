@@ -1,15 +1,6 @@
 require 'spec_helper'
 
 describe DarkSlackBot do
-    before do
-        t = Time.local(2018, 10, 12, 21, 0, 0)
-        Timecop.freeze(t)
-    end
-
-    after do
-        Timecop.return
-    end
-
     context "user requests today's weather" do
         it "responds with today's forecast" do
             VCR.use_cassette('weather_now') do

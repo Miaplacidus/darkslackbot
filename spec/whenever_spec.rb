@@ -3,12 +3,6 @@ require 'spec_helper'
 describe 'Whenever Schedule' do
     before do
         load 'Rakefile'
-        t = Time.local(2018, 10, 12, 21, 0, 0)
-        Timecop.freeze(t)
-    end
-
-    after do
-        Timecop.return
     end
 
     it 'makes sure rake statements exist' do

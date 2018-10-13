@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 13 Oct 2018 05:31:26 GMT
+      - Sat, 13 Oct 2018 05:40:00 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -27,17 +27,17 @@ http_interactions:
       Connection:
       - keep-alive
       X-Authentication-Time:
-      - 2ms
+      - 4ms
       Cache-Control:
       - max-age=3600
       Expires:
-      - Sat, 13 Oct 2018 06:31:26 +0000
+      - Sat, 13 Oct 2018 06:40:00 +0000
       X-Forecast-Api-Calls:
-      - '46'
+      - '51'
       X-Content-Type-Options:
       - nosniff
       X-Response-Time:
-      - 50.852ms
+      - 50.735ms
       Vary:
       - Accept-Encoding
     body:
@@ -79,7 +79,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 13 Oct 2018 05:31:26 GMT
+      - Sat, 13 Oct 2018 05:40:01 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -87,17 +87,17 @@ http_interactions:
       Connection:
       - keep-alive
       X-Authentication-Time:
-      - 2ms
+      - 11ms
       Cache-Control:
       - max-age=3600
       Expires:
-      - Sat, 13 Oct 2018 06:31:26 +0000
+      - Sat, 13 Oct 2018 06:40:01 +0000
       X-Forecast-Api-Calls:
-      - '47'
+      - '52'
       X-Content-Type-Options:
       - nosniff
       X-Response-Time:
-      - 105.233ms
+      - 57.390ms
       Vary:
       - Accept-Encoding
     body:
@@ -138,17 +138,17 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '232'
+      - '231'
       Connection:
       - keep-alive
       Date:
-      - Sat, 13 Oct 2018 05:31:26 GMT
+      - Sat, 13 Oct 2018 05:40:02 GMT
       Server:
       - Apache
       X-Slack-Router:
       - p
       X-Slack-Req-Id:
-      - ee8225ae-ff7e-47c6-8c03-bea46a0a65e6
+      - f900f618-2f3f-4077-b6ac-b697300a0a87
       X-Oauth-Scopes:
       - identify,bot:basic
       X-Accepted-Oauth-Scopes:
@@ -176,18 +176,18 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       X-Via:
-      - haproxy-www-0dty
+      - haproxy-www-ml9i
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 2b015c35013ce05c1d8d5d37261bfe86.cloudfront.net (CloudFront)
+      - 1.1 0d445e74dd0e8d7c3940052920107697.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - U9wGm5MUNUsPQikGxVDZluVy6mTgit8kBtKNexUsuixxjz1mdygHGw==
+      - ZNtwyPq-HiMjQzSbc2ZOidLfd4i6RTVgLKWfJt0mMNGOwqJSx4OFrg==
     body:
       encoding: ASCII-8BIT
-      string: '{"ok":true,"channel":"GDCNTMJKY","ts":"1539408686.000100","message":{"type":"message","user":"UDB9UDZQT","text":"<!channel>:
+      string: '{"ok":true,"channel":"GDCNTMJKY","ts":"1539409202.000100","message":{"type":"message","user":"UDB9UDZQT","text":"<!channel>:
         Forecast for  9:00 pm on Friday October 12, 2018:\nclear with a temperature
-        of 52.06\u00b0 F\n\nSoon:\n\n","bot_id":"BDBCK03PC","ts":"1539408686.000100"}}'
+        of 52.06\u00b0 F\n\nSoon:\n\n","bot_id":"BDBCK03PC","ts":"1539409202.000100"}}'
     http_version: 
   recorded_at: Sat, 13 Oct 2018 02:00:00 GMT
 recorded_with: VCR 4.0.0
