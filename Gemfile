@@ -10,6 +10,7 @@ group :development, :test do
     gem 'pry'
     gem 'rack-test'
     gem 'rspec'
+    gem 'timecop'
     gem 'vcr'
     gem 'webmock'
     gem 'whenever-test'

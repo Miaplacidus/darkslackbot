@@ -16,6 +16,7 @@
 
 require 'rack/test'
 require 'slack-ruby-bot/rspec'
+require 'timecop'
 require 'whenever'
 require 'whenever/test'
 

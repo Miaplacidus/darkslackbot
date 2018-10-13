@@ -87,6 +87,7 @@ GEM
       hashie
       websocket-driver
     thread_safe (0.3.6)
+    timecop (0.9.1)
     timers (4.1.2)
       hitimes
     tzinfo (1.2.5)
@@ -115,6 +116,7 @@ DEPENDENCIES
   rake
   rspec
   slack-ruby-bot
+  timecop
   vcr
   webmock
   whenever
