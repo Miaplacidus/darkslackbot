@@ -4,9 +4,9 @@ class Forecast
     attr_accessor :time, :forecast
 
     # default location is NYC
-    def initialize(time, latitude=40.7127, longitude=-74.0059)
+    def initialize(time=nil, latitude=40.7127, longitude=-74.0059)
         @time = time
-        @forecast = ForecastIO.forecast(latitude, longitude, time: time.to_i)
+        @forecast = ForecastIO.forecast(latitude, longitude, time: time&.to_i)
     end
 
     def weather_forecast
@@ -65,8 +65,10 @@ class Forecast
 
 
     def weather_msg(time, summary, temperature, imminent_weather, alerts)
+        forecast_time = time.nil? ? Time.now().strftime('%l:%M %P on %A %B %-d, %Y') : time.strftime('%l:%M %P on %A %B %-d, %Y')
+
         <<~MSG
-            Forecast for #{time.strftime('%l:%M %P on %A %B %-d, %Y')}:
+            Forecast for #{forecast_time}:
             #{summary.downcase} with a temperature of #{temperature}° F
 
             #{imminent_weather_msg(imminent_weather)}

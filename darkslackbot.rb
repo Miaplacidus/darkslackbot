@@ -19,7 +19,7 @@ class DarkSlackBot < SlackRubyBot::Bot
     end
 
     command /weather now/i do |client, data, match|
-        client.say(text: "#{Forecast.new(Time.now).weather_forecast}", channel: data.channel)
+        client.say(text: "#{Forecast.new().weather_forecast}", channel: data.channel)
     end
 
     command /weather tomorrow/i do |client, data, match|
