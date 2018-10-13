@@ -5,7 +5,7 @@ describe DarkSlackBot do
         it "responds with today's forecast" do
             VCR.use_cassette('weather_now') do
                 expect(message: "#{SlackRubyBot.config.user} weather now")
-                    .to respond_with_slack_message(/rain/i)
+                    .to respond_with_slack_message(/clear/i)
             end
         end
     end

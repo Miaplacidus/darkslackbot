@@ -21,7 +21,7 @@ ENV['RACK_ENV'] = 'test'
 
 require File.expand_path '../../darkslackbot.rb', __FILE__
 
-Dir["./spec/support/**/*.rb"].each { |f| require f }
+Dir["./spec/support/*.rb"].each { |f| require f }
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate

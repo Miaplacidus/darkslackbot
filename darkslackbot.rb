@@ -1,3 +1,5 @@
+require './forecast'
+
 class DarkSlackBot < SlackRubyBot::Bot
     help do
         title 'ifua-bot'
@@ -17,15 +19,15 @@ class DarkSlackBot < SlackRubyBot::Bot
     end
 
     command /weather now/i do |client, data, match|
-        client.say(text: "rain", channel: data.channel)
+        client.say(text: "#{Forecast.new(Time.now).weather_forecast}", channel: data.channel)
     end
 
     command /weather tomorrow/i do |client, data, match|
         sec_in_day = 86400
-        client.say(text: "clear", channel: data.channel)
+        client.say(text: "#{Forecast.new(Time.now + sec_in_day).weather_forecast}", channel: data.channel)
     end
 
     command /moon phase/i do |client, data, match|
-        client.say(text: "waxing", channel: data.channel)
+        client.say(text: "#{Forecast.new(Time.now).moon_phase}", channel: data.channel)
     end
 end
