@@ -16,6 +16,8 @@
 
 require 'rack/test'
 require 'slack-ruby-bot/rspec'
+require 'whenever'
+require 'whenever/test'
 
 ENV['RACK_ENV'] = 'test'
 
